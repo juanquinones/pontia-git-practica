@@ -1,0 +1,14 @@
+name: Workflow Manual
+on:
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: 'Añade un texto'
+        required: true
+        default: ''
+jobs:
+  print-text:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir Mensaje
+        run: echo "EL mensaje es, ${{ github.event.inputs.texto }}!"
